@@ -34,6 +34,11 @@ myReverse :: [a] -> [a]
 myReverse [] = []
 myReverse (x:xs) = myReverse(xs) ++ [x]
 
+--
+isPalindrome :: (Eq a) => [a] -> Bool
+isPalindrome [] = True
+isPalindrome l = l == (myReverse l)
+
 exeMain = do
         print (myLast [1,2,3,4])
         print (myLast ['a','v'])
@@ -41,7 +46,9 @@ exeMain = do
         print (elementAt [1,2,3,4] 1)
         print (myReverse [1,2,3,4])
         print (myReverse "Mary had a little lamb")
-
+        print (isPalindrome [1,3,2])
+        print (isPalindrome "madamimadam")
+        print (isPalindrome [1])
 
 --map2 :: (a ->b) -> a -> b
 --map2 f [] = []

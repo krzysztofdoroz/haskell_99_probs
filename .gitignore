@@ -1,0 +1,10 @@
+
+dist/build/autogen/Paths_learnSomeHaskell.hs
+
+*.hi
+
+*.o
+
+dist/build/learnSomeHaskell/learnSomeHaskell
+
+dist/build/test-learnSomeHaskell/test-learnSomeHaskell
