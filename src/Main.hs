@@ -39,6 +39,17 @@ isPalindrome :: (Eq a) => [a] -> Bool
 isPalindrome [] = True
 isPalindrome l = l == (myReverse l)
 
+--
+compress :: (Eq a) => [a] -> [a]
+compress [] = []
+compress l = compress2 l []
+   where
+    compress2 [] acc = myReverse acc
+    compress2 (x:xs) acc = if not (null acc) && x == head acc
+                            then compress2 xs acc
+                            else compress2 xs (x:acc)
+
+
 exeMain = do
         print (myLast [1,2,3,4])
         print (myLast ['a','v'])
@@ -49,6 +60,8 @@ exeMain = do
         print (isPalindrome [1,3,2])
         print (isPalindrome "madamimadam")
         print (isPalindrome [1])
+        print (compress [1,2,2])
+        print (compress "aaaabccaadeeee")
 
 --map2 :: (a ->b) -> a -> b
 --map2 f [] = []
